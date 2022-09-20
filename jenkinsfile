@@ -1,8 +1,10 @@
 pipeline {
     agent any
+    #tools declaration
     tools{
         maven 'MAVEN3'
     }
+    #tools declaration
     environment {
     registry = '076892551558.dkr.ecr.us-east-1.amazonaws.com/devop_repository'
     registryCredential = 'jenkins-ecr'
@@ -24,6 +26,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        #image build stage
         stage('Build Image') {
             steps {
                 script{
@@ -31,6 +34,7 @@ pipeline {
                 } 
             }
         }
+        #send image to AWS ECR
         stage('Deploy image') {
             steps{
                 script{ 
