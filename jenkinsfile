@@ -1,4 +1,7 @@
 pipeline {
+    triggers{
+    pollSCM('* * * * *')
+    }
     agent any
     tools{
         maven 'MAVEN3'
@@ -27,11 +30,6 @@ pipeline {
                 echo 'Image step'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Wilson'
-                pwd
-             }
-        }
+        
     }
 }
