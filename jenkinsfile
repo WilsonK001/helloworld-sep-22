@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    #tools declaration
     tools{
         maven 'MAVEN3'
     }
@@ -26,7 +25,6 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        #image build stage
         stage('Build Image') {
             steps {
                 script{
@@ -34,7 +32,6 @@ pipeline {
                 } 
             }
         }
-        #send image to AWS ECR
         stage('Deploy image') {
             steps{
                 script{ 
