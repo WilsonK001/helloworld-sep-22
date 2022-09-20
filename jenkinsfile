@@ -28,10 +28,10 @@ pipeline {
             }
         }
         stage('Test') {
-            step {
+            steps {
                 echo 'Wilson'
                 pwd
-                }
-                }
+             }
+        }
     }
 }
