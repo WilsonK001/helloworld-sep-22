@@ -27,5 +27,11 @@ pipeline {
                 echo 'Image step'
             }
         }
+        stage('Test') {
+            step {
+                echo 'Wilson'
+                pwd
+                }
+                }
     }
 }
